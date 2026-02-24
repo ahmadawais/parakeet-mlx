@@ -51,6 +51,7 @@ const handleTranscribe = async (
 	}).start();
 
 	try {
+		const lastFile = files[files.length - 1];
 		for (const file of files) {
 			spinner.text = `Transcribing ${pc.dim(file)}…`;
 
@@ -67,7 +68,7 @@ const handleTranscribe = async (
 
 			spinner.succeed(`Transcribed ${pc.green(file)}`);
 
-			if (files.indexOf(file) < files.length - 1) {
+			if (file !== lastFile) {
 				spinner.start();
 			}
 		}
