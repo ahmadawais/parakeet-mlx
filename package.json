@@ -1,0 +1,37 @@
+{
+	"name": "parakeet-mlx",
+	"version": "0.0.1",
+	"description": "Implementation of Nvidia's Parakeet ASR models for Apple Silicon using MLX",
+	"license": "Apache-2.0",
+	"type": "module",
+	"bin": {
+		"parakeet-mlx": "./dist/index.js"
+	},
+	"main": "./dist/index.js",
+	"files": ["dist"],
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"dependencies": {
+		"@clack/prompts": "^0.10.1",
+		"commander": "^14.0.0",
+		"ora": "^8.2.0",
+		"picocolors": "^1.1.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/node": "^22.15.0",
+		"tsup": "^8.4.0",
+		"typescript": "^5.8.3",
+		"vitest": "^3.1.1"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
+	}
+}
