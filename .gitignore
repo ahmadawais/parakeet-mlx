@@ -13,5 +13,8 @@ wheels/
 # uv
 uv.lock
 
+# Node.js
+node_modules/
+
 # mac
 .DS_Store
